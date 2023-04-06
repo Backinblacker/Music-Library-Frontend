@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: "PressStart2P", sans-serif;
 }
 
 .App-logo {
@@ -35,4 +36,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: 'PressStart2P';
+  src: url('./Fonts/PressStart2P-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
