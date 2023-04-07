@@ -19,4 +19,6 @@
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+  font-size: small;
+  background-color: #FBE0C3;
 }

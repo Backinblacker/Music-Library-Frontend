@@ -1,8 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './MusicTable.css'
 const MusicTable = ({songs}) => {
     // const {songs} = props;
     return (
       <div>
-        <table>
+        <table className="table table-bordered">
           <thead>
             <tr>
               <th>Title</th>
