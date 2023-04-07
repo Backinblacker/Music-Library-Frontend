@@ -22,11 +22,26 @@ function App() {
     setSongs(response.data.songs);
     console.log(response.data.songs);
   }
+  async function createSong(newSong){
+    // newSong:
+    // {
+    //     title: "Arabian Nights",
+    //     album: "Aladdin",
+    //     artist: "Bruce Adler",
+    //     genre: "Pop",
+    //     release_date: "1992-11-10"
+    //     running_time: "79"
+    // }
+    let response = await axios.post('http://127.0.0.1:5000/api/songs/', newSong)
+    if (response.status === 201){
+        await getAllSongs();
+    }
+}
 
   return (
     <div className="container-1">
       <div className="container-1">
-        <NavBar searchSongs={searchSongs} />
+        <NavBar searchSongs={searchSongs} createSong={createSong}/>
       </div>
       <div>
         <MusicTable songs={songs} />
