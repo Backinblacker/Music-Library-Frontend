@@ -30,9 +30,13 @@ function App() {
   //       }
   //   }
     return (
-    <div>
-      <NavBar />
-      <MusicTable songs={songs}/>
+    <div className='container-1'>
+      <div className='container-1'>
+        <NavBar />
+      </div>
+      <div>
+        <MusicTable songs={songs}/>
+      </div>
     </div>
   );
 }
