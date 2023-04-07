@@ -1,16 +1,18 @@
+
 .App {
   text-align: center;
   font-family: "PressStart2P", sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
-}
 @font-face {
   font-family: 'PressStart2P';
-  src: url('./Fonts/PressStart2P-Regular.ttf') format('truetype');
+  src: local('PressStart2P'),url('./Fonts/PressStart2P-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+.this-font{
+  font-family: 'PressStart2P';
 }
 
 .container-1{

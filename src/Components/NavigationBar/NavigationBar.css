@@ -8,11 +8,18 @@
     background-color: #357f7c;
     overflow-x: hidden;
     padding-top: 16px;
-    font-family: cursive;
+    font-family: "PressStart2P";
   }
   
   /* Style sidebar links */
   .sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #FFBB98;
+    display: block;
+  }
+  .sidebar-logo {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 20px;

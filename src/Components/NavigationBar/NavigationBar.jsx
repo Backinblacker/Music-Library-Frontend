@@ -6,22 +6,26 @@ import {HeartFill} from "react-bootstrap-icons";
 import {MusicNoteBeamed} from "react-bootstrap-icons";
 import SearchBar from "../SearchBar/SearchBar";
 
-const NavBar = (props) => {
-    const [showSearch, setShowSearch] = useState(false);
+const NavBar = ({ searchSongs={searchSongs} }) => {
+  const [showSearch, setShowSearch] = useState(false);
 
-    function handleSearchClick() {
-        setShowSearch(true);
-    }
+  function handleSearchClick() {
+    setShowSearch(true);
+  }
 
-    return (  
-        <div class="sidebar">
-            <a href="#home"><HouseDoorFill color='#FFBB98' size='20px' />{' '}Home</a>
-            <a href="#search" onClick={handleSearchClick}><Search color='#FFBB98' size='20px' />{' '}Search</a>
-            <a href="#favorites"><HeartFill color='#FFBB98' size='20px' />{' '}Favorites</a>
-            <a href="#AddNew"><MusicNoteBeamed color='#FFBB98' size='20px' />{' '}Add New Song</a>
-            {showSearch && <SearchBar />}
-        </div>
-    );
+  function handleSearch(query, filter) {
+    searchSongs(query, filter);
+  }
+
+  return (  
+    <div className="sidebar">
+      <a href="#home"><HouseDoorFill color='#FFBB98' size='20px' />{' '}Home</a>
+      <a href="#search" onClick={handleSearchClick}><Search color='#FFBB98' size='20px' />{' '}Search</a>
+      <a href="#favorites"><HeartFill color='#FFBB98' size='20px' />{' '}Favorites</a>
+      <a href="#AddNew"><MusicNoteBeamed color='#FFBB98' size='20px' />{' '}Add New Song</a>
+      {showSearch && <SearchBar onSearch={handleSearch} />}
+    </div>
+  );
 }
  
 export default NavBar;
