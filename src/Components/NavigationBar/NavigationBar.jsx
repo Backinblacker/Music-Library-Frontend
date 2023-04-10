@@ -71,7 +71,7 @@ const NavBar = ({ searchSongs, createSong }) => {
       <div className="sidebar-logo"><Headphones color="#FFBB98"size='24px'></Headphones>{' '}Tune Shed</div>
       <br/>
       <br/>
-      <a href="#home" onClick={handleFeatureNotWorking}><HouseDoorFill color='#FFBB98' size='20px' />{' '}Home</a>
+      <a href={window.location.href} onClick={() => window.location.reload()}><HouseDoorFill color='#FFBB98' size='20px' />{' '}Home</a>
       <a href="#search" onClick={handleSearchClick}><Search color='#FFBB98' size='20px' />{' '}Search</a>
       <a href="#favorites" onClick={handleFeatureNotWorking}><HeartFill color='#FFBB98' size='20px' />{' '}Favorites</a>
       <a href="#AddNew" onClick={handleAddNewClick}><MusicNoteBeamed color='#FFBB98' size='20px' />{' '}Add New Song</a>
