@@ -43,8 +43,7 @@ const NavBar = ({ searchSongs, createSong }) => {
   async function handleDeleteSong(event) {
     event.preventDefault();
     const id = prompt('Enter the ID of the song to be deleted:');
-    await axios.delete(`http://127.0.0.1:5000/api/songs/<int:song_id>`);
-    await getAllSongs();
+    await axios.delete(`http://127.0.0.1:5000/api/songs/${id}`);
   }
 
   async function handleNewSongSubmit(event) {
@@ -76,7 +75,7 @@ const NavBar = ({ searchSongs, createSong }) => {
       <a href="#search" onClick={handleSearchClick}><Search color='#FFBB98' size='20px' />{' '}Search</a>
       <a href="#favorites" onClick={handleFeatureNotWorking}><HeartFill color='#FFBB98' size='20px' />{' '}Favorites</a>
       <a href="#AddNew" onClick={handleAddNewClick}><MusicNoteBeamed color='#FFBB98' size='20px' />{' '}Add New Song</a>
-      <a href="#AddNew" onClick={handleFeatureNotWorking}><Trash3 color='#FFBB98' size='20px' />{' '}Delete Song</a>
+      <a href="#AddNew" onClick={handleDeleteSong}><Trash3 color='#FFBB98' size='20px' />{' '}Delete Song</a>
       {showSearch && <SearchBar searchSongs={handleSearch} />}
       {showAddNew&&(
         <form onSubmit={handleNewSongSubmit}>
