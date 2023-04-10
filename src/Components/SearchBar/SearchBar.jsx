@@ -16,6 +16,12 @@ const SearchBar = ({ searchSongs }) => {
     event.preventDefault();
     searchSongs(searchQuery, filter);
   };
+  
+  const handleReset = () => {
+    setSearchQuery('');
+    setFilter('title');
+    searchSongs('', 'title');
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -28,6 +34,7 @@ const SearchBar = ({ searchSongs }) => {
         <option value="release_date">Release Date</option>
       </select>
       <button type="submit">Search</button>
+      <button type='button'onClick={handleReset}>Reset Filters</button>
     </form>
   );
 };
