@@ -40,11 +40,11 @@ function App() {
 }
 
   return (
-    <div className="container-1">
+    <div className="container-1 App">
       <div className="container-1">
         <NavBar searchSongs={searchSongs} createSong={createSong}/>
       </div>
-      <div>
+      <div className="container-1" style={{marginLeft: '250px'}}>
         <MusicTable songs={songs} />
       </div>
     </div>
