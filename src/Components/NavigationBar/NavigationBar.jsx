@@ -42,7 +42,7 @@ const NavBar = ({ searchSongs, createSong }) => {
 
   async function handleDeleteSong(event) {
     event.preventDefault();
-    const id = prompt('Enter the ID of the song to be deleted:');
+    const id = prompt('Enter the ID of the song to be deleted: *After you have entered the id, press home to refresh the table.');
     await axios.delete(`http://127.0.0.1:5000/api/songs/${id}`);
   }
 
