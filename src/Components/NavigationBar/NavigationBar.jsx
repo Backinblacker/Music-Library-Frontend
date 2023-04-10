@@ -61,7 +61,7 @@ const NavBar = ({ searchSongs, createSong }) => {
       <a href="#search" onClick={handleSearchClick}><Search color='#FFBB98' size='20px' />{' '}Search</a>
       <a href="#favorites"><HeartFill color='#FFBB98' size='20px' />{' '}Favorites</a>
       <a href="#AddNew" onClick={handleAddNewClick}><MusicNoteBeamed color='#FFBB98' size='20px' />{' '}Add New Song</a>
-      {showSearch && <SearchBar onSearch={handleSearch} />}
+      {showSearch && <SearchBar searchSongs={handleSearch} />}
       {showAddNew&&(
         <form onSubmit={handleNewSongSubmit}>
           <input type="text" name="title" placeholder="Title" value={newSong.title} onChange={handleNewSongChange} />
