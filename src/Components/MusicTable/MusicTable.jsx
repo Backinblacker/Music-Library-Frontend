@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './MusicTable.css'
 const MusicTable = ({songs}) => {
-    // const {songs} = props;
     return (
       <div>
         <table className="table table-bordered">
           <thead>
             <tr>
+              <th>Song ID</th>
               <th>Title</th>
               <th>Artist</th>
               <th>Album</th>
@@ -19,6 +19,7 @@ const MusicTable = ({songs}) => {
           <tbody>
           {songs && songs.map((song) => (
               <tr key={song.id}>
+                <td>{song.id}</td>
                 <td>{song.title}</td>
                 <td>{song.artist}</td>
                 <td>{song.album}</td>

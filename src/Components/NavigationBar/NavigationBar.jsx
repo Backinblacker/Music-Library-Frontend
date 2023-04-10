@@ -1,10 +1,12 @@
 import "./NavigationBar.css"
+import axios from "axios";
 import React, { useState } from 'react';
 import {HouseDoorFill} from 'react-bootstrap-icons';
 import {Search} from "react-bootstrap-icons";
 import {HeartFill} from "react-bootstrap-icons";
 import {MusicNoteBeamed} from "react-bootstrap-icons";
 import { Headphones } from "react-bootstrap-icons";
+import { Trash3 } from "react-bootstrap-icons";
 import SearchBar from "../SearchBar/SearchBar";
 
 const NavBar = ({ searchSongs, createSong }) => {
@@ -38,6 +40,13 @@ const NavBar = ({ searchSongs, createSong }) => {
     });
   }
 
+  async function handleDeleteSong(event) {
+    event.preventDefault();
+    const id = prompt('Enter the ID of the song to be deleted:');
+    await axios.delete(`http://127.0.0.1:5000/api/songs/<int:song_id>`);
+    await getAllSongs();
+  }
+
   async function handleNewSongSubmit(event) {
     event.preventDefault();
     await createSong(newSong);
@@ -67,6 +76,7 @@ const NavBar = ({ searchSongs, createSong }) => {
       <a href="#search" onClick={handleSearchClick}><Search color='#FFBB98' size='20px' />{' '}Search</a>
       <a href="#favorites" onClick={handleFeatureNotWorking}><HeartFill color='#FFBB98' size='20px' />{' '}Favorites</a>
       <a href="#AddNew" onClick={handleAddNewClick}><MusicNoteBeamed color='#FFBB98' size='20px' />{' '}Add New Song</a>
+      <a href="#AddNew" onClick={handleFeatureNotWorking}><Trash3 color='#FFBB98' size='20px' />{' '}Delete Song</a>
       {showSearch && <SearchBar searchSongs={handleSearch} />}
       {showAddNew&&(
         <form onSubmit={handleNewSongSubmit}>
