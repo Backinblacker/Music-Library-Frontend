@@ -22,13 +22,20 @@ describe('Testing Music Project', () => {
       // cy.get('[name="running_time"]')
       //   .type('179')
       //   .should('have.value', '179')
-        // cy.get('button').click()
+      // cy.get('button').click()
+
+      //Testing Filter Songs
+      // cy.get('[data-test=SearchSongs]').contains('Search').click()
+      // cy.get('input')
+      //   .type("Ain't That Some")
+      //   .should('have.value', "Ain't That Some")
+      //   cy.get('[type="submit"]').click()
     });
   });
 });
 
 
 
-//Testing Filter Songs
+
 
 //Testing Delete Song

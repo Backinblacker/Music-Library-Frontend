@@ -72,9 +72,9 @@ const NavBar = ({ searchSongs, createSong }) => {
       <br/>
       <br/>
       <a href={window.location.href} onClick={() => window.location.reload()}><HouseDoorFill color='#FFBB98' size='20px' />{' '}Home</a>
-      <a href="#search" onClick={handleSearchClick}><Search color='#FFBB98' size='20px' />{' '}Search</a>
+      <a href="#search" onClick={handleSearchClick} data-test="SearchSongs"><Search color='#FFBB98' size='20px' />{' '}Search</a>
       <a href="#favorites" onClick={handleFeatureNotWorking}><HeartFill color='#FFBB98' size='20px' />{' '}Favorites</a>
-      <a href="#AddNew" onClick={handleAddNewClick}><MusicNoteBeamed color='#FFBB98' size='20px' />{' '}Add New Song</a>
+      <a href="#AddNew" onClick={handleAddNewClick} data-test="NewSong"><MusicNoteBeamed color='#FFBB98' size='20px' />{' '}Add New Song</a>
       <a href="#AddNew" onClick={handleDeleteSong}><Trash3 color='#FFBB98' size='20px' />{' '}Delete Song</a>
       {showSearch && <SearchBar searchSongs={handleSearch} />}
       {showAddNew&&(
