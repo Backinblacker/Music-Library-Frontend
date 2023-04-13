@@ -75,7 +75,7 @@ const NavBar = ({ searchSongs, createSong }) => {
       <a href="#search" onClick={handleSearchClick} data-test="SearchSongs"><Search color='#FFBB98' size='20px' />{' '}Search</a>
       <a href="#favorites" onClick={handleFeatureNotWorking}><HeartFill color='#FFBB98' size='20px' />{' '}Favorites</a>
       <a href="#AddNew" onClick={handleAddNewClick} data-test="NewSong"><MusicNoteBeamed color='#FFBB98' size='20px' />{' '}Add New Song</a>
-      <a href="#AddNew" onClick={handleDeleteSong}><Trash3 color='#FFBB98' size='20px' />{' '}Delete Song</a>
+      <a href="#AddNew" onClick={handleDeleteSong} data-test="DeleteSong"><Trash3 color='#FFBB98' size='20px' />{' '}Delete Song</a>
       {showSearch && <SearchBar searchSongs={handleSearch} />}
       {showAddNew&&(
         <form onSubmit={handleNewSongSubmit}>
